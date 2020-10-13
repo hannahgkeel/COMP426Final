@@ -2,16 +2,21 @@
 {% block content %}
 <body>
 <h1 class="center">Welcome to Monterrey's Waiting List</h1>
-    <h2>Already have an account?</h2>
+<div style="float:left; padding-right:30px;">
+<h2>Already have an account?</h2>
+<form class="form">
     <div class="field">
-        <form action="action_page.php">
+            <div class="padding">
             <label class="label">Type your username</label>
             <div class="control">
             <input class="input" type="text" placeholder="Username">
             </div>
+            </div>
+            <div class="padding">
             <label class="label">Type your password</label>
             <div class="control">
             <input class="input" type="text" placeholder="Password">
+            </div>
             </div>
             <div class="field is-grouped">
                 <div class="control">
@@ -20,16 +25,22 @@
               </div>
           </form>
         </div>
+    </div>
+    <div style="float:left;">
     <h2>New to our waiting list?</h2>
+    <form class="form">
     <div class="field">
-    <form action="action_page.php">
+        <div class="padding">
         <label class="label">Create a username</label>
         <div class="control">
         <input class="input" type="text" placeholder="Username">
         </div>
+        </div>
+        <div class="padding">
         <label class="label">Create a password</label>
         <div class="control">
         <input class="input" type="text" placeholder="Password">
+        </div>
         </div>
         <div class="field is-grouped">
             <div class="control">
@@ -38,5 +49,6 @@
           </div>
       </form>
     </div>
+</div>
 </body>
 {% endblock %}
