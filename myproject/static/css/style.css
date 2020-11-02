@@ -1,4 +1,33 @@
 /*test css*/
 body {
-    background-color: rgb(80, 76, 76);
+    background-color: rgb(41, 49, 54);
+    color: rgb(171, 180,186);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+h2 {
+    padding-top: 20px;
+}
+
+
+.center {
+    margin: auto;
+    width: 50%;
+    border: 3px solid white;
+    padding: 20px;
+    text-align: center;
+    position: left;
+}
+
+.form {
+    background-color: rgb(171, 180,186);
+    color:  rgb(41, 49, 54);
+    text-align: left;
+    font-size: 17px;
+    padding: 20px;
+    display: inline-block;
+}
+
+.padding {
+    padding-bottom: 10px;
 }

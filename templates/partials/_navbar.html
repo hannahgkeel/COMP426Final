@@ -1,0 +1,42 @@
+{% load static %}
+<!--Navbar-->
+<nav class="navbar bg-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="{% url 'index' %}">
+      <img src="//static1.squarespace.com/static/5c799777e8ba44691e699c6d/t/5c79987e7817f7d6f1b6ecb7/1602686985703/?format=1500w">
+    </a>
+
+    <a role="button" class="navbar-burger burger" id="navbar-burger-id" aria-label="menu" aria-expanded="false" data-target="navbar-menu-id">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbar-menu-id" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="{% url 'index' %}">
+        Home
+      </a>
+
+      <a class="navbar-item" href="{% url 'about' %}">
+        About
+      </a>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+      <!--Add IF here. If User is already logged in, display
+      logout button instead-->
+        <div class="buttons">
+          <a class="button is-primary">
+            <bold>Sign up</bold>
+          </a>
+          <a class="button is-light">
+            Log in
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
