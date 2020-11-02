@@ -30,10 +30,10 @@
         <!--Add IF here. If User is already logged in, display
         logout button instead-->
           <div class="buttons">
-            <a class="button is-primary">
-              <bold>Sign up</bold>
+            <a class="button is-primary" href="{% url 'register' %}">
+              <bold>Register</bold>
             </a>
-            <a class="button is-light">
+            <a class="button is-light" href="{% url 'login' %}">
               Log in
             </a>
           </div>
