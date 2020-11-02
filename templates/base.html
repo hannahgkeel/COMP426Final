@@ -6,14 +6,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!--CSS link-->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="sylesheet" href="{% static 'bulma/css/style.css' %}">
+    <!--M favicon on window tab-->
+    <link rel="shortcut icon" type="image/x-icon" href="https://images.squarespace-cdn.com/content/v1/5c799777e8ba44691e699c6d/1568740545100-1VDA4NJEF7ESKG7ODH56/ke17ZwdGBToddI8pDm48kDdKUe0-oSOVVnYO1ho5SNVZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpxAVZ6F4dbM2q1BLVfs6m51HSO9sykeGazHOz_3hdP6U9iklRe7GZi1ileECH4kisA/monterrey.png?format=500w">
     
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="{% static 'css/all.css' %}">
+
+    <!--Bulma-->
+    <link rel="stylesheet" href="{% static 'bulma/css/style.css' %}">
+    
+    <!--CSS custom style-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
     <title>Virtual Queue</title>
 </head>
 <body>
+    <!--load Topbar-->
+    {% include 'partials/_topbar.html' %}
+
+    <!--load Navbar-->
+    {% include 'partials/_navbar.html' %}
+
     <!--This is where we output any template that we extend-->
     {% block content %}{% endblock content %}
+
+    <!--load Footer
+    {% include 'partials/_footer.html' %}-->
+
+    <!--JS scripts-->
+    <script src="{% static 'js/jquery-3.3.1.min.js' %} "></script>
+    <script src="{% static 'js/main.js' %} "></script>
 </body>
 </html>
