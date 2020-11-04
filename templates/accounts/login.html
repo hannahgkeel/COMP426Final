@@ -4,6 +4,9 @@
 
 <h1>LOGIN</h1>
 
+<!--ALERTS-->
+{% include 'partials/_alerts.html' %}
+
 <form action="{% url 'login' %}" method="POST">{% csrf_token %}
 
 
