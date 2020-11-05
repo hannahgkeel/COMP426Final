@@ -1,0 +1,18 @@
+{% if messages %}
+    {% for message in messages %}
+
+    <div id="message" class="notification is-light {{ message.tags }}">
+        <button class="delete" aria-label="delete"></button>
+        <strong>
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                Error:
+            {% elif message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS%}
+                Success:
+            {% else %}
+                {{ message.tags|title }}:
+            {% endif %}
+        </strong>
+         {{ message }}
+    </div>
+    {% endfor %}
+{% endif %}

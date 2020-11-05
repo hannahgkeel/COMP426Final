@@ -27,16 +27,36 @@
 
       <div class="navbar-end">
         <div class="navbar-item">
-        <!--Add IF here. If User is already logged in, display
+        <!--If User is already logged in, display
         logout button instead-->
-          <div class="buttons">
-            <a class="button is-primary">
-              <bold>Sign up</bold>
-            </a>
-            <a class="button is-light">
-              Log in
-            </a>
-          </div>
+          {% if user.is_authenticated %}
+            <div class="pr-3">
+              Welcome {{user.username}}.
+            </div>
+            <div class="buttons">
+              <a class="button is-primary" href="{% url 'register' %}">
+                <bold>Get in Queue!</bold>
+              </a>
+              <a class="button is-light" href="javascript:{document.getElementById('logout').submit()}">
+                Log out
+              </a>
+              <form action="{% url 'logout' %}" method="POST" id="logout">
+                {% csrf_token %}
+                <input type="hidden"> 
+              </form>
+            </div>
+
+          <!--User is not logged in-->
+          {% else %}
+            <div class="buttons">
+              <a class="button is-primary" href="{% url 'register' %}">
+                <bold>Register</bold>
+              </a>
+              <a class="button is-light" href="{% url 'login' %}">
+                Log in
+              </a>
+            </div>
+          {% endif %}
         </div>
       </div>
     </div>

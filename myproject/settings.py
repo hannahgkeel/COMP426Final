@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'pages.apps.PagesConfig',
+    'accounts.apps.AccountsConfig',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -77,8 +78,11 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'myprojectdb',
+        'USER': 'postgres',
+        'PASSWORD': 'sunandshield',
+        'HOST': 'localhost'
     }
 }
 
@@ -124,3 +128,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'myproject/static')
 ]
+
+# Messages
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'is-danger',
+    messages.SUCCESS: 'is-success'
+}
