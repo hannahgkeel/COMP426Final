@@ -8,6 +8,7 @@
 {% include 'partials/_alerts.html' %}
 
 <form action="{% url 'login' %}" method="POST">{% csrf_token %}
+    <div style="width:300px; padding-top:5px; padding-bottom: 10px; padding-left: 20px">
     <h1 class="title" style="color: white; padding-top:5px">
         Please Login
       </h1>
@@ -37,7 +38,7 @@
           </button>
         </p>
       </div>
-    <!-- <input type="submit" value="Login"> -->
+    </div>
 
 </form>
 
