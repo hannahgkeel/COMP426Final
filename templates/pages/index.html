@@ -6,34 +6,43 @@
     <!--ALERTS-->
     {% include 'partials/_alerts.html' %}
 
-    <h1 class="title">
+    <h1 class="title" style="color: white">
       Welcome to Monterrey's Waiting List
     </h1>
-    <p class="subtitle">
-      Some cool subtitle here!
+    <p class="subtitle" style="color: white">
+      Here's how it works:
     </p>
 
-    <div class="content">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Ut ac nulla sit amet arcu pellentesque efficitur ultrices eget diam. Vestibulum ante
-    ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In tortor nisi,
-    blandit eget massa eget, hendrerit porta ligula. Quisque dictum pulvinar bibendum. In
-    hac habitasse platea dictumst. Integer venenatis purus ut efficitur finibus. Pellentesque
-    ultricies mauris nec risus feugiat, eu semper quam semper.</p>
+    <div class="tile">
+      <div class="tile is-parent">
+        <article class="tile is-child notification is-info">
+          <i class="fas fa-sign-in-alt icon is-large" style="float:left"></i>
+          <p class="title">Step 1</p>
+          <p class="subtitle">Login or Sign up</p>
+        </article>
+      </div>
+    </div>
+    
+    <div class="tile">
+      <div class="tile is-parent">
+        <article class="tile is-child notification is-info">
+          <i class="fas fa-search-location icon is-large" style="float:left"></i>
+          <p class="title">Step 2</p>
+          <p class="subtitle">Choose your party size and Monterrey location</p>
+        </article>
+      </div>
+    </div>
 
-    <h3>
-      How it works
-    </h3>
-    <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis sed malesuada
-    lectus. Etiam pulvinar vehicula ipsum ac bibendum. Nullam sed auctor ipsum. Nam non
-    finibus velit. Aliquam ut magna odio. Nulla convallis neque non iaculis efficitur. 
-    Curabitur ornare tristique lectus, id lobortis ante facilisis ac. Fusce aliquet metus
-    enim, vel commodo quam feugiat ut. Vestibulum sed justo nisi.</p>
-    <ol type="1">
-      <li>Log in or Register</li>
-      <li>Fill out the form and queue</li>
-      <li>Wait until server notifies you and join us!</li>
-    </ol>
+    <div class="tile">
+      <div class="tile is-parent">
+        <article class="tile is-child notification is-info">
+          <i class="fas fa-check-circle icon is-large" style="float:left"></i>
+          <p class="title">Step 3</p>
+          <p class="subtitle">Wait for your turn to enter the restaurant and be seated by the host.</p>
+        </article>
+      </div>
+    </div>
+
     </div>
   </div>
 </section>
