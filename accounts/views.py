@@ -53,15 +53,10 @@ def login(request):
         if user is not None:
             auth.login(request, user)
             messages.success(request, 'You are now logged in.')
-            #Decide where we will be redirected
-            return redirect('index')
+            return redirect('waitlist')
         else:
             messages.error(request, 'Invalid credentials')
             return redirect('login')
-
-
-
-        return redirect('login')
     else:
         return render(request, 'accounts/login.html')
 

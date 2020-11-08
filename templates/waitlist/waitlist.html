@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        WAITLIST
+      </h1>
+        <!--ALERTS-->
+        {% include 'partials/_alerts.html' %}
+
+        <form action="{% url 'waitlist' %}" method="POST">{% csrf_token %}
+
+            <label for="location">Location</label>
+            <select id="location" name="location">
+                <option value="Carrboro">Carrboro</option>
+                <option value="Chapel Hill">Chapel Hill</option>
+            </select>
+
+            <label for="party_size">Party size</label>
+            <select id="party_size" name="party_size">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+            </select>
+
+            <input type="submit" value="Join waitlist">
+
+        </form>
+
+    </div>
+  </section>
+{% endblock %}
