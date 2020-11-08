@@ -25,8 +25,13 @@ def index(request):
             ticket = WaitlistTicket(location=location, party_size=party_size, customer=full_name, user_id=username)
             ticket.save()
             messages.success(request, 'You have been added to the waitlist')
-            return redirect('waitlist')
+            return redirect('inlist')
 
     #method is GET
     else:
         return render(request, 'waitlist/waitlist.html')
+
+
+@login_required(login_url='/accounts/login')
+def inlist(request):
+    return render(request, 'waitlist/inlist.html')
