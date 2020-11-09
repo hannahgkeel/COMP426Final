@@ -2,7 +2,18 @@
 {% block content %}
   <section class="section">
     <div class="container">
-        <h1>YOU ARE WAITING NOW</h1>
+        <h1 class="title" style="color:white">There are currently 5 people ahead of you inline.</h1>
+            <progress class="progress is-large is-primary" value="25" max="100">15%</progress>
+
+        <h2 class="subtitle" style="color:white">Changed your mind?</h2>
+            <div class="field" style="padding-bottom:5px">
+              <p class="control">
+                <button class="button is-danger">
+                  Leave Waitlist
+                </button>
+              </p>
+            </div>
+          </div>
     </div>
   </section>
 {% endblock %}
