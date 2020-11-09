@@ -41,7 +41,6 @@ def index(request):
 
 @login_required(login_url='/accounts/login')
 def inlist(request):
-
     #get username
     username = request.user
 
@@ -64,3 +63,7 @@ def inlist(request):
     else:
         messages.error(request,'Please join the waitlist first.')
         return redirect('waitlist')
+
+@login_required(login_url='/accounts/login')
+def ready(request):
+    return render(request, 'waitlist/ready.html')
