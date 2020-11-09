@@ -15,8 +15,8 @@ def index(request):
         location = request.POST['location']
         party_size = request.POST['party_size']
 
-        #If user is already in waitlist, redirect to inlist
-        if WaitlistTicket.objects.filter(user_id=username).exists():
+        #If user is already in waitlist and has not been served, redirect to inlist
+        if WaitlistTicket.objects.filter(user_id=username, customer_is_served=False).exists():
             messages.error(request,'You are already on the waitlist')
             return redirect('inlist')
 
@@ -30,8 +30,8 @@ def index(request):
     #method is GET
     else:
 
-        #Redirect to inlist if the user was already on the waitlist.
-        if WaitlistTicket.objects.filter(user_id=username).exists():
+        #Redirect to inlist if the user was already on list but not served..
+        if WaitlistTicket.objects.filter(user_id=username, customer_is_served=False).exists():
             return redirect('inlist')
 
 
@@ -46,14 +46,14 @@ def inlist(request):
     username = request.user
 
     #Make sure the user is already in the queue.
-    if WaitlistTicket.objects.filter(user_id=username).exists():
+    if WaitlistTicket.objects.filter(user_id=username, customer_is_served=False).exists():
 
         #find user location and check in time in wait list table
-        user_location = WaitlistTicket.objects.get(user_id=username).location
-        user_check_in_time = WaitlistTicket.objects.get(user_id=username).check_in_time
+        user_location = WaitlistTicket.objects.get(user_id=username, customer_is_served=False).location
+        user_check_in_time = WaitlistTicket.objects.get(user_id=username, customer_is_served=False).check_in_time
 
         #Count number of people ahead of user (including user)
-        user_position = WaitlistTicket.objects.filter(location = user_location, check_in_time__lte=user_check_in_time).count()
+        user_position = WaitlistTicket.objects.filter(location = user_location, check_in_time__lte=user_check_in_time, customer_is_served=False).count()
 
         context = {
             'user_position': user_position

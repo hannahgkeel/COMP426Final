@@ -1,17 +1,12 @@
 from django.contrib import admin
 from .models import WaitlistTicket
 
-# Take care of the next customer:
-def notify_selected_customers(modeladmin, request, queryset):
-    queryset.delete()
-    notify_selected_customers.short_description= "Notify selected customers"
-
 # Register your models here.
 class WaitlistAdmin(admin.ModelAdmin):
-    list_display = ('customer', 'party_size', 'check_in_time', 'location')
-    list_filter = ('location',)
+    list_display = ('customer', 'party_size', 'check_in_time', 'table_is_ready', 'location', 'customer_is_served')
+    list_filter = ('location', 'customer_is_served')
     ordering = ('check_in_time',)
-    actions = [notify_selected_customers]
+    list_editable=('table_is_ready','customer_is_served')
 
 
 admin.site.register(WaitlistTicket, WaitlistAdmin)
