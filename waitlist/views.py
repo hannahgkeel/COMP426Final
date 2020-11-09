@@ -35,3 +35,8 @@ def index(request):
 @login_required(login_url='/accounts/login')
 def inlist(request):
     return render(request, 'waitlist/inlist.html')
+
+
+@login_required(login_url='/accounts/login')
+def ready(request):
+    return render(request, 'waitlist/ready.html')
