@@ -18,7 +18,7 @@ def index(request):
         #If user is already in waitlist, give error
         if WaitlistTicket.objects.filter(user_id=username).exists():
             messages.error(request,'You are already on the waitlist')
-            return redirect('waitlist')
+            return redirect('inlist')
 
         #Else carry on
         else:
