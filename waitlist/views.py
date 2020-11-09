@@ -44,18 +44,33 @@ def inlist(request):
     #get username
     username = request.user
 
+    if request.method == 'POST':
+        WaitlistTicket.objects.filter(user_id=username, customer_is_served=False).delete()
+        return redirect('waitlist')
+
     #Make sure the user is already in the queue.
     if WaitlistTicket.objects.filter(user_id=username, customer_is_served=False).exists():
+
+        #If the table is ready, move to next screen
+        if WaitlistTicket.objects.filter(user_id=username, customer_is_served=False, table_is_ready=True).exists():
+            print('WE ARE READY FOR YOU')
+            return redirect('ready')
 
         #find user location and check in time in wait list table
         user_location = WaitlistTicket.objects.get(user_id=username, customer_is_served=False).location
         user_check_in_time = WaitlistTicket.objects.get(user_id=username, customer_is_served=False).check_in_time
 
         #Count number of people ahead of user (including user)
-        user_position = WaitlistTicket.objects.filter(location = user_location, check_in_time__lte=user_check_in_time, customer_is_served=False).count()
+        user_position = WaitlistTicket.objects.filter(location = user_location, check_in_time__lte=user_check_in_time, customer_is_served=False).count() - 1
+
+        #percentage of progress bar filled:
+        progress_bar_value = 40
+        if user_position < 5:
+            progress_bar_value = (10 - user_position)*10 
 
         context = {
-            'user_position': user_position
+            'user_position': user_position,
+            'progress_bar_value': progress_bar_value
         }
 
         #Send this info on render method so we can use it on html
@@ -66,4 +81,7 @@ def inlist(request):
 
 @login_required(login_url='/accounts/login')
 def ready(request):
+    username = request.user
+    if not WaitlistTicket.objects.filter(user_id=username, customer_is_served=False, table_is_ready=True).exists():
+        return redirect('waitlist')
     return render(request, 'waitlist/ready.html')
