@@ -7,18 +7,18 @@ from .models import WaitlistTicket
 # If the user is not logged in, send to login screen.
 @login_required(login_url='/accounts/login')
 def index(request):
+    username = request.user
 
     if request.method == 'POST':
         #get variables
-        username = request.user
         full_name = request.user.get_full_name()
         location = request.POST['location']
         party_size = request.POST['party_size']
 
-        #If user is already in waitlist, give error
+        #If user is already in waitlist, redirect to inlist
         if WaitlistTicket.objects.filter(user_id=username).exists():
             messages.error(request,'You are already on the waitlist')
-            return redirect('waitlist')
+            return redirect('inlist')
 
         #Else carry on
         else:
@@ -29,9 +29,38 @@ def index(request):
 
     #method is GET
     else:
+
+        #Redirect to inlist if the user was already on the waitlist.
+        if WaitlistTicket.objects.filter(user_id=username).exists():
+            return redirect('inlist')
+
+
         return render(request, 'waitlist/waitlist.html')
+
 
 
 @login_required(login_url='/accounts/login')
 def inlist(request):
-    return render(request, 'waitlist/inlist.html')
+
+    #get username
+    username = request.user
+
+    #Make sure the user is already in the queue.
+    if WaitlistTicket.objects.filter(user_id=username).exists():
+
+        #find user location and check in time in wait list table
+        user_location = WaitlistTicket.objects.get(user_id=username).location
+        user_check_in_time = WaitlistTicket.objects.get(user_id=username).check_in_time
+
+        #Count number of people ahead of user (including user)
+        user_position = WaitlistTicket.objects.filter(location = user_location, check_in_time__lte=user_check_in_time).count()
+
+        context = {
+            'user_position': user_position
+        }
+
+        #Send this info on render method so we can use it on html
+        return render(request, 'waitlist/inlist.html', context)
+    else:
+        messages.error(request,'Please join the waitlist first.')
+        return redirect('waitlist')

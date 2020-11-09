@@ -3,6 +3,11 @@
   <section class="section">
     <div class="container">
         <h1>YOU ARE WAITING NOW</h1>
+        {% if user_position == 1 %}
+            <p>You are next in line.</p>
+        {% else %}
+            <p>You are currently {{ user_position }} in line.</p>
+        {% endif %}
     </div>
   </section>
 {% endblock %}

@@ -15,6 +15,8 @@ class WaitlistTicket(models.Model):
     party_size = models.IntegerField()
     customer = models.CharField(max_length=50)
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    #table_is_ready = models.BooleanField(default=False)
+    #customer_is_served = models.BooleanField(default=False)
 
     def __str__(self):
         return self.customer
