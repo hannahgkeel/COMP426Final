@@ -2,11 +2,12 @@
 
 {% block content %}
 
-<div class="container level">
-  <div class="level-left">
+<div class="container">
+
   <!--ALERTS-->
   {% include 'partials/_alerts.html' %}
-
+  <div class="level">
+  <div class="level-left">
 <!--Registration form-->
   <form action="{% url 'register' %}" method="POST">{% csrf_token %}
       <div style="width:300px; padding-top:5px; padding-bottom: 10px; padding-left: 20px">
@@ -83,7 +84,8 @@
 
   </form>
   <div class="level-right">
-  <img src="https://raster-static.postmates.com/?url=com.postmates.img.prod.s3.amazonaws.com/f20988f9-aa75-4e4f-b0d9-a3305c139c61/orig.png&quality=90&w=1500&h=900&mode=crop&format=png&v=4" width=800 height=1100>
+  <img src="https://raster-static.postmates.com/?url=com.postmates.img.prod.s3.amazonaws.com/f20988f9-aa75-4e4f-b0d9-a3305c139c61/orig.png&quality=90&w=1500&h=900&mode=crop&format=png&v=4" width=750 height=900>
+</div>
 </div>
 </div>
 

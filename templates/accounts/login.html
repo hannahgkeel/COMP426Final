@@ -3,11 +3,11 @@
 {% block content %}
 
 
-<div class="container level">
-  <div class="level-left">
+<div class="container">
   <!--ALERTS-->
   {% include 'partials/_alerts.html' %}
-
+  <div class="level">
+  <div class="level-left">
   <form action="{% url 'login' %}" method="POST">{% csrf_token %}
       <div style="width:300px; padding-top:5px; padding-bottom: 10px; padding-left: 20px">
       <h1 class="title" style="color: white; padding-top:5px">
@@ -43,9 +43,10 @@
 
   </form>
 </div>
-  <div class="level-right" style="padding-top: 20px;">
+  <div class="level-right" style="padding-top: 20px; padding-bottom:20px;">
     <img src="https://raster-static.postmates.com/?url=com.postmates.img.prod.s3.amazonaws.com/3af45e95-a2e7-418d-a958-4ec7a18a3bcd/orig.jpg&quality=90&w=1500&h=900&mode=crop&format=jpg&v=4" width=750 height=900>
   </div>
+</div>
 </div>
 
 
