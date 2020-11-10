@@ -53,12 +53,18 @@ def inlist(request):
 
         #If the table is ready, move to next screen
         if WaitlistTicket.objects.filter(user_id=username, customer_is_served=False, table_is_ready=True).exists():
-            print('WE ARE READY FOR YOU')
             return redirect('ready')
 
         #find user location and check in time in wait list table
         user_location = WaitlistTicket.objects.get(user_id=username, customer_is_served=False).location
         user_check_in_time = WaitlistTicket.objects.get(user_id=username, customer_is_served=False).check_in_time
+
+        if user_location == 'Carrboro':
+            map_lat = 35.916570
+            map_lng = -79.094475
+        else:
+            map_lat = 35.938104
+            map_lng = -79.021997
 
         #Count number of people ahead of user (including user)
         user_position = WaitlistTicket.objects.filter(location = user_location, check_in_time__lte=user_check_in_time, customer_is_served=False).count() - 1
@@ -70,7 +76,11 @@ def inlist(request):
 
         context = {
             'user_position': user_position,
-            'progress_bar_value': progress_bar_value
+            'progress_bar_value': progress_bar_value,
+            'user_location':user_location,
+            'map_lat': map_lat,
+            'map_lng': map_lng
+
         }
 
         #Send this info on render method so we can use it on html
