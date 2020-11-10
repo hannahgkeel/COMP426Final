@@ -31,8 +31,13 @@
     {% include 'partials/_navbar.html' %}
 
     <!--This is where we output any template that we extend-->
+    <div style="margin: 0;
+    padding: 0;
+    width: 100%;
+    position: relative;
+    min-height: calc(100vh + 8rem);">
     {% block content %}{% endblock content %}
-
+    </div>
     <!--load Footer-->
     {% include 'partials/_footer.html' %}
 
