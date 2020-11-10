@@ -31,3 +31,8 @@ h2 {
 .padding {
     padding-bottom: 10px;
 }
+
+#map {
+    height: 400px;
+    background-color: green;
+}
