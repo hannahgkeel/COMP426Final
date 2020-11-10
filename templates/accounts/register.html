@@ -3,9 +3,11 @@
 {% block content %}
 
 <div class="container">
+
   <!--ALERTS-->
   {% include 'partials/_alerts.html' %}
-
+  <div class="level">
+  <div class="level-left">
 <!--Registration form-->
   <form action="{% url 'register' %}" method="POST">{% csrf_token %}
       <div style="width:300px; padding-top:5px; padding-bottom: 10px; padding-left: 20px">
@@ -78,14 +80,13 @@
               </p>
             </div>
           </div>
-
-
-      <!-- <label for="password2">Confirm Password</label>
-      <input type="password" name="password2" required>
-
-      <input type="submit" value="Register"> -->
+        </div>
 
   </form>
+  <div class="level-right">
+  <img src="https://raster-static.postmates.com/?url=com.postmates.img.prod.s3.amazonaws.com/f20988f9-aa75-4e4f-b0d9-a3305c139c61/orig.png&quality=90&w=1500&h=900&mode=crop&format=png&v=4" width=750 height=900>
+</div>
+</div>
 </div>
 
 
