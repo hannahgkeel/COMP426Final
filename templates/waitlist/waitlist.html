@@ -3,12 +3,12 @@
   <section class="section">
     <div class="container">
         <!--ALERTS-->
-        {% include 'partials/_alerts.html' %}
+      {% include 'partials/_alerts.html' %}
       <div class="level">
         <div class="level-left">
         <form action="{% url 'waitlist' %}" method="POST">{% csrf_token %}
 
-          <div style="width:300px; padding-top:5px; padding-bottom: 10px; padding-left: 20px">
+          <div style="width:300px; padding-bottom: 10px; padding-left: 20px">
             <h1 class="title" style="color: white; padding-top:5px">
               Enter the Waitlist
             </h1>
@@ -36,7 +36,7 @@
           </div>      
                 </div>
       
-                <div class="field" style="padding-bottom:5px">
+                <div class="field pt-2" style="padding-bottom:5px">
                     <p class="control">
                       <button class="button is-success">
                         Join Waitlist
@@ -47,7 +47,7 @@
         </form>
       </div>
 
-      <div class="level-right">
+      <div class="level-right pt-5">
         <img src="https://raster-static.postmates.com/?url=com.postmates.img.prod.s3.amazonaws.com/2711ae53-e08a-4baa-9f00-74112043b526/orig.jpg&quality=90&w=1500&h=900&mode=crop&format=jpg&v=4" width=750 height=900>
       </div>
       </div>
