@@ -19,9 +19,14 @@
       <div class= "columns">
           <div class="column is-half mt-2" id="map"></div>
           <!-- add directions here -->
-          <div class="column has-text-centered pt-6">
+          <div class="column pt-6 pl-6">
             <h2 class="subtitle has-text-white">You will be notified as soon as a table becomes available.</h2>
-            <h2 class="has-text-white">Changed your mind?</h2>
+            <div>
+            <p><strong style="color:#ffff">Address:</strong> {{ address }}</p>
+            <p><strong style="color:#ffff">Hours:</strong> 11AM - 10PM</p>
+            <p><strong style="color:#ffff">Phone:</strong> {{ phone }}</p>
+            </div>
+            <h2 class="">Changed your mind?</h2>
             <div class="field pb-5 pt-5">
               <p class="control">
                 <a class="button is-danger" href="javascript:{document.getElementById('leavelist').submit()}">

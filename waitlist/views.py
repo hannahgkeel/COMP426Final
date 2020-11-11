@@ -62,9 +62,13 @@ def inlist(request):
         if user_location == 'Carrboro':
             map_lat = 35.916570
             map_lng = -79.094475
+            address = "104 N Carolina 54 unit ff, Carrboro, NC 27510"
+            phone = "(919) 903-9919"
         else:
             map_lat = 35.938104
             map_lng = -79.021997
+            address = "1722 Fordham Blvd, Chapel Hill, NC 27514"
+            phone = "(919) 969-8750"
 
         #Count number of people ahead of user (including user)
         user_position = WaitlistTicket.objects.filter(location = user_location, check_in_time__lte=user_check_in_time, customer_is_served=False).count() - 1
@@ -79,7 +83,9 @@ def inlist(request):
             'progress_bar_value': progress_bar_value,
             'user_location':user_location,
             'map_lat': map_lat,
-            'map_lng': map_lng
+            'map_lng': map_lng,
+            'address': address,
+            'phone': phone,
 
         }
 
