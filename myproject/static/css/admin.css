@@ -1,0 +1,33 @@
+#header {
+    background: rgb(41, 49, 54);
+    color: white;
+}
+
+#branding h1 {
+    color:white
+}
+
+div.breadcrumbs {
+    background: #00d1b2;
+}
+
+.module h2,
+.module caption, 
+.inline h2 {
+    background: #00d1b2;
+}
+
+.button.default,
+input[type=submit].default,
+input.default {
+    background: rgb(41, 49, 54);
+}
+
+
+.button,
+input[type=submit],
+input[type=button],
+submit-row input,
+a.button{
+    background: rgb(41, 49, 54);
+}

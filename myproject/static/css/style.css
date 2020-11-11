@@ -1,4 +1,7 @@
 /*test css*/
+
+a:hover { color: #00d1b2; }
+
 body {
     background-color: rgb(41, 49, 54);
     color: rgb(171, 180,186);
@@ -34,4 +37,14 @@ h2 {
 
 #map {
     height: 400px;
+}
+
+.Site {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  
+.Site-content {
+    flex: 1;
 }

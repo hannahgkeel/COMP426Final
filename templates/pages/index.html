@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+
+{% block title %}| Welcome {% endblock %}
+
 {% block content %}
 
 <section class="section">
@@ -18,7 +21,7 @@
         <article class="tile is-child notification is-info">
           <i class="fas fa-sign-in-alt icon is-large" style="float:left"></i>
           <p class="title">Step 1</p>
-          <p class="subtitle"><a href="../accounts/login">Login</a> or <a href="../accounts/register">Sign up</a></p>
+          <p class="subtitle"><a href="{% url 'login' %}">Login</a> or <a href="{% url 'register' %}">Sign up</a></p>
         </article>
       </div>
     </div>

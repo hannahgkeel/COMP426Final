@@ -1,0 +1,18 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+
+{% block extrahead %}
+    <link rel="shortcut icon" type="image/x-icon" href="https://images.squarespace-cdn.com/content/v1/5c799777e8ba44691e699c6d/1568740545100-1VDA4NJEF7ESKG7ODH56/ke17ZwdGBToddI8pDm48kDdKUe0-oSOVVnYO1ho5SNVZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpxAVZ6F4dbM2q1BLVfs6m51HSO9sykeGazHOz_3hdP6U9iklRe7GZi1ileECH4kisA/monterrey.png?format=500w">
+{% endblock %}
+
+
+{% block branding %}
+<h1 id="head">
+<img src="https://images.squarespace-cdn.com/content/v1/5c799777e8ba44691e699c6d/1568740545100-1VDA4NJEF7ESKG7ODH56/ke17ZwdGBToddI8pDm48kDdKUe0-oSOVVnYO1ho5SNVZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpxAVZ6F4dbM2q1BLVfs6m51HSO9sykeGazHOz_3hdP6U9iklRe7GZi1ileECH4kisA/monterrey.png?format=500w" height="50" width="80" alt="Monterrey">
+Virtual Waitlist Management</h1>
+{% endblock %}
+
+<!--Write the css for admin side on myproject/static/css/admin.css-->
+{% block extrastyle %} 
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+{% endblock %}
