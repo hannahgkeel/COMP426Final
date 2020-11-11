@@ -5,13 +5,15 @@
 <div class="container">
 
   <!--ALERTS-->
-  {% include 'partials/_alerts.html' %}
+  <div class="pt-5">
+    {% include 'partials/_alerts.html' %}
+  </div>
   <div class="level">
   <div class="level-left">
 <!--Registration form-->
   <form action="{% url 'register' %}" method="POST">{% csrf_token %}
-      <div style="width:300px; padding-top:5px; padding-bottom: 10px; padding-left: 20px">
-          <h1 class="title" style="color: white; padding-top:5px">
+      <div class="pt-5" style="width:300px; padding-bottom: 10px; padding-left: 20px">
+          <h1 class="title" style="color: white">
               Register Here
             </h1>
           <div class="field">
@@ -72,7 +74,7 @@
           </div>
         
 
-          <div class="field" style="padding-bottom:5px">
+          <div class="field pt-2" style="padding-bottom:5px">
               <p class="control">
                 <button class="button is-success">
                   Register
@@ -83,7 +85,7 @@
         </div>
 
   </form>
-  <div class="level-right">
+  <div class="level-right pt-5">
   <img src="https://raster-static.postmates.com/?url=com.postmates.img.prod.s3.amazonaws.com/f20988f9-aa75-4e4f-b0d9-a3305c139c61/orig.png&quality=90&w=1500&h=900&mode=crop&format=png&v=4" width=750 height=900>
 </div>
 </div>
