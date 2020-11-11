@@ -1,4 +1,7 @@
 /*test css*/
+
+a:hover { color: #00d1b2; }
+
 body {
     background-color: rgb(41, 49, 54);
     color: rgb(171, 180,186);
