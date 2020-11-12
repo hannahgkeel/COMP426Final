@@ -24,7 +24,6 @@ def index(request):
         else:
             ticket = WaitlistTicket(location=location, party_size=party_size, customer=full_name, user_id=username)
             ticket.save()
-            messages.success(request, 'You have been added to the waitlist')
             return redirect('inlist')
 
     #method is GET
@@ -46,6 +45,7 @@ def inlist(request):
 
     if request.method == 'POST':
         WaitlistTicket.objects.filter(user_id=username, customer_is_served=False).delete()
+        messages.success(request,'You have left the waitlist')
         return redirect('waitlist')
 
     #Make sure the user is already in the queue.
