@@ -37,6 +37,8 @@ def register(request):
 
     #Dealing with a 'GET' request        
     else:
+        if request.user.is_authenticated:
+            return redirect('waitlist')
         return render(request, 'accounts/register.html')
 
 
@@ -58,6 +60,8 @@ def login(request):
             messages.error(request, 'Invalid credentials')
             return redirect('login')
     else:
+        if request.user.is_authenticated:
+            return redirect('waitlist')
         return render(request, 'accounts/login.html')
 
 def logout(request):
