@@ -136,3 +136,8 @@ MESSAGE_TAGS = {
     messages.ERROR: 'is-danger',
     messages.SUCCESS: 'is-success'
 }
+
+try:
+    from.local_settings import *
+except ImportError:
+    pass
