@@ -14,12 +14,8 @@ h2 {
 
 
 .center {
-    margin: auto;
-    width: 50%;
     border: 3px solid white;
     padding: 20px;
-    text-align: center;
-    position: left;
 }
 
 .form {
